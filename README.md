@@ -1,5 +1,30 @@
 ## Thermometer Test
 
+### Getting Started
+
+Install dependencies:
+
+```
+npm install
+```
+
+* This installs the necessary development dependencies. There are no regular dependencies otherwise.
+
+Build project
+```
+npm run build
+```
+
+Run the project
+```
+npm start
+```
+
+Run in development mode 
+```
+npm run dev
+```
+
 ### Instructions
 
 Design and implement (in the OO language of your choice) a thermometer class or classes that read the temperature of some external source.
