@@ -9,7 +9,7 @@ describe('ThresholdNotifier', () => {
 
   beforeEach(() => {
     thermometer = new Thermometer();
-    notifier = new ThresholdNotifier();
+    notifier = new ThresholdNotifier(thermometer);
     callback = jest.fn();
   });
 
