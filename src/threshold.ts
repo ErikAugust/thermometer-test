@@ -27,5 +27,7 @@ export class Threshold {
     return temp < this.temperatureCelsius - this.tolerance;
   }
 
-  
+  public isWithin(temp: number): boolean {
+    return !this.isAbove(temp) && !this.isBelow(temp);
+  }
 }

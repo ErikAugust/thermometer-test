@@ -36,4 +36,16 @@ describe('Threshold Class', () => {
     expect(threshold.isBelow(-0.4)).toBe(false);  // -0.4 ≥ 0 - 0.5
   });
 
+  test('isWithin should return true when temperature is within tolerance range', () => {
+    const threshold = new Threshold(0, 'both', 0.5, callback);
+    expect(threshold.isWithin(0.4)).toBe(true);   // Within upper tolerance
+    expect(threshold.isWithin(-0.4)).toBe(true);  // Within lower tolerance
+  });
+
+  test('isWithin should return false when temperature is outside tolerance range', () => {
+    const threshold = new Threshold(0, 'both', 0.5, callback);
+    expect(threshold.isWithin(1)).toBe(false);   // Above upper tolerance
+    expect(threshold.isWithin(-1)).toBe(false);  // Below lower tolerance
+  });
+
 });
