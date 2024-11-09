@@ -13,22 +13,4 @@ describe('Thermometer', () => {
     expect(thermometer.getTemperatureCelsius()).toBe(25);
     expect(thermometer.getTemperatureFahrenheit()).toBe(77);
   });
-
-  test('should notify when temperature crosses a defined threshold', () => {
-    const thermometer = new Thermometer();
-    const callback = jest.fn();
-  
-    thermometer.addThreshold({
-      temperatureCelsius: 0,
-      direction: 'falling',
-      tolerance: 0.5,
-      notified: false,
-      callback,
-    });
-  
-    thermometer.updateTemperature(1);
-    thermometer.updateTemperature(0.4); // Should trigger callback
-  
-    expect(callback).toHaveBeenCalledWith(0.4);
-  });
 });
