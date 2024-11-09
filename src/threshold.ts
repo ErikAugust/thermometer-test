@@ -22,4 +22,10 @@ export class Threshold {
   public isAbove(temp: number): boolean {
     return temp > this.temperatureCelsius + this.tolerance;
   }
+
+  public isBelow(temp: number): boolean {
+    return temp < this.temperatureCelsius - this.tolerance;
+  }
+
+  
 }
