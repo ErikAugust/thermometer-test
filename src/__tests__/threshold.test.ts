@@ -48,4 +48,19 @@ describe('Threshold Class', () => {
     expect(threshold.isWithin(-1)).toBe(false);  // Below lower tolerance
   });
 
+  test('should handle zero tolerance correctly', () => {
+    const threshold = new Threshold(0, 'both', 0, callback);
+    expect(threshold.isWithin(0)).toBe(true);
+    expect(threshold.isAbove(0.1)).toBe(true);
+    expect(threshold.isBelow(-0.1)).toBe(true);
+  });
+
+  test('should handle negative temperatures correctly', () => {
+    const threshold = new Threshold(-10, 'both', 0.5, callback);
+    expect(threshold.isWithin(-9.6)).toBe(true);   // Within upper tolerance
+    expect(threshold.isWithin(-10.4)).toBe(true);  // Within lower tolerance
+    expect(threshold.isAbove(-9)).toBe(true);      // Above upper tolerance
+    expect(threshold.isBelow(-11)).toBe(true);     // Below lower tolerance
+  });
+
 });
