@@ -25,6 +25,11 @@ Run in development mode
 npm run dev
 ```
 
+Run tests
+```
+npm test
+```
+
 ### Instructions
 
 Design and implement (in the OO language of your choice) a thermometer class or classes that read the temperature of some external source.
